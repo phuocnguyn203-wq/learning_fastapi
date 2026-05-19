@@ -18,14 +18,10 @@ def get_all() -> list[Creature]:
 def create(creature: Creature) -> Creature:
     return service.create(creature)
 
-@router.patch('/modify_creature')
+@router.patch('/modify')
 def modify_creature(name: str, creature: CreatureUpdate) -> Creature:
     return service.modify(name, creature)
 
-@router.put('/replace')
-def replace_creature(name: str, creature: Creature) -> Creature:
-    return service.replace(name, creature)
-
-@router.delete('/delete_creature')
+@router.delete('/delete')
 def delete_creature(name: str) -> Creature:
     return service.delete(name)

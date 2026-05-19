@@ -18,14 +18,10 @@ def get_all() -> list[Explorer]:
 def create(explorer: Explorer) -> Explorer:
     return service.create(explorer)
 
-@router.patch('/modify_explorer')
+@router.patch('/modify')
 def modify_explorer(name: str, explorer_update: ExplorerUpdate) -> Explorer:
     return service.modify(name, explorer_update)
 
-@router.put('/replace')
-def replace_explorer(name: str, explorer: Explorer) -> Explorer:
-    return service.replace(name, explorer)
-
-@router.delete('/delete_explorer')
+@router.delete('/delete')
 def delete_explorer(name: str) -> Explorer:
     return service.delete(name)
